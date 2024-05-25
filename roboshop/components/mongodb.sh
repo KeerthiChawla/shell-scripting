@@ -30,7 +30,7 @@ Print "Configuring MongoDB\t"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 Status_Check $? 
 
-Print "Starting MongoDB"
+Print "Starting MongoDB\t"
 systemctl enable mongod
 systemctl restart mongod
 Status_Check $?
@@ -44,7 +44,7 @@ Print "Extracting Schema Archive"
 unzip -o mongodb.zip &>>/tmp/log
 Status_Check $? 
 cd mongodb-main
-Print "Loading Schema"
+Print "Loading Schema\t\t"
 mongo < catalogue.js &>>/tmp/log
 mongo < users.js &>>/tmp/log 
 Status_Check $? 
