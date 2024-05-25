@@ -1,1 +1,1 @@
-echo "Installing Catalogue"
+source components/common.sh
