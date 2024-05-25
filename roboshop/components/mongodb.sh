@@ -9,7 +9,7 @@ fi
 }
 
 Print() {
-    echo -n -e "$1"
+    echo -n -e "$1 - "
 }
 
 Print "Setting Up MongoDB Repo"
