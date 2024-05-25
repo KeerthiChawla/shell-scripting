@@ -21,7 +21,7 @@ else
 fi 
 
 echo "Configuring MongoDB"
-sed -i -e 's/127.0.0.1/0.0.0.0' /etc/mongod.conf
+sed -i -e "s/127.0.0.1/0.0.0.0" /etc/mongod.conf
 if [ $? -eq 0 ]; then 
   echo -e "\e[32mSuccess\e[0m"
 else
@@ -55,8 +55,8 @@ else
 fi 
 cd mongodb-main
 echo "Loading Schema"
-mongo < catalogue.js &>>tmp/log
-mongo < users.js &>>tmp/log 
+mongo < catalogue.js &>>/tmp/log
+mongo < users.js &>>/tmp/log 
 if [ $? -eq 0 ]; then 
   echo -e "\e[32mSuccess\e[0m"
 else
