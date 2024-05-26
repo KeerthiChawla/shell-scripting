@@ -19,7 +19,7 @@ mv catalogue-main catalogue
 Status_Check $?
 
 cd /home/roboshop/catalogue
-npm install --unsafe-perm &>>LOG 
+npm install --unsafe-perm &>>$LOG 
 
 
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
