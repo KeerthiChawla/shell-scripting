@@ -15,12 +15,11 @@ Status_Check $?
 Print "Extracting Catalogue"
 cd /home/roboshop
 unzip -o /tmp/catalogue.zip &>>$LOG
-rm -rf catalogue
 mv catalogue-main catalogue
 Status_Check $?
 
 cd /home/roboshop/catalogue
-npm install &>>LOG 
+npm install --unsafe-perm &>>LOG 
 
 
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
