@@ -19,12 +19,12 @@ Status_Check $?
 
 Print "Extracting Catalogue"
 cd /home/roboshop
+rm -rf catalogue
 unzip -o /tmp/catalogue.zip &>>$LOG
 mv catalogue-main catalogue
 Status_Check $?
 
 Print "Download NodeJS Dependencies"
-rm -rf catalogue
 cd /home/roboshop/catalogue
 npm install --unsafe-perm &>>$LOG 
 Status_Check $?
