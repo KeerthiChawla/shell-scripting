@@ -24,6 +24,7 @@ mv catalogue-main catalogue
 Status_Check $?
 
 Print "Download NodeJS Dependencies"
+rm -rf catalogue
 cd /home/roboshop/catalogue
 npm install --unsafe-perm &>>$LOG 
 Status_Check $?
