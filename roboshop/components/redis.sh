@@ -3,7 +3,7 @@
 source components/common.sh
 
 Print "Install Yum Utils & Download Redis Repos"
-yum install epel-release yum-utils http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y &>>$LOG
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y &>>$LOG
 Status_Check $?
 
 Print "Setup Redis Repos\t\t\t"
