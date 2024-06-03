@@ -9,5 +9,4 @@ exit 1
 fi
 
 IP=$(aws ec2 run-instances --launch-template LaunchTemplateId=$LID,Version=$LVER --tag-specification 
-"ResourceType=spot-instances-request,Tags=[{Key=Name,Value=$INSTANCE_NAME}" "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME}"
- | jq .Instances[].PrivateIpAddress | sed 's/"//g') 
+"ResourceType=spot-instances-request,Tags=[{Key=Name,Value=$INSTANCE_NAME}" "ResourceType=instance,Tags=[{Key=Name,Value=$INSTANCE_NAME}" | jq .Instances[].PrivateIpAddress | sed 's/"//g') 
