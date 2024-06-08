@@ -5,3 +5,5 @@
     - name: Print HelloWorld
       debug: 
         msg: Hello World
+  roles:
+    - sample
