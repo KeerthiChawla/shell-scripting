@@ -3,6 +3,8 @@
   vars:
     URL1: play.google.com
     #PlayLevel variables
+  vars_files: 
+    - vars.yml
   tasks: 
     - name: Print a Variable
       debug: 
@@ -10,4 +12,3 @@
     - name: Print a Variable from file
       debug: 
         msg: URL={{URL2}}
-        
