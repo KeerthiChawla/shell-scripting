@@ -2,6 +2,7 @@
   hosts: all
   vars:
     URL1: play.google.com
+    URL: play.google.com
     #PlayLevel variables
   vars_files: 
     - vars.yml
@@ -23,3 +24,11 @@
     - name: Print Variable from CLI
       debug:
         msg: URL = {{URL5}}
+    - name: Show Variable Precedence
+      vars: 
+        URL: tasks.google.com
+      debug:
+        msg: URL = {{URL}}
+    - name: Print Fact Variables
+      debug:
+        msg: OS = {{ansible_distribution}}
