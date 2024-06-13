@@ -20,4 +20,4 @@ Status_Check $?
 
 Print "Restart Nginx"
 systemctl restart nginx &>>$LOG && systemctl enable nginx  &>>$LOG
-
+Status_Check $?
