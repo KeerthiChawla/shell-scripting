@@ -32,3 +32,20 @@
     - name: Print Fact Variables
       debug:
         msg: OS = {{ansible_distribution}}
+        
+    - name: Run a Shell command and store output
+      shell: uptime
+      register: out
+      #out is user defined variable and variable name is our choice
+    - name: Print Uptime output
+      debug:
+        msg: "{{out}}"
+        #if we want only uptime output then give "{{out.stdout}}"
+#In Ansible if value starts with a variable then it has to be double quoted. +9
+    - name: Declare a variable/fact
+      set_fact:
+        OUTPUT: "{{out.stdout}}"
+    
+    - name: Print output
+      debug:
+        msg: "{{OUTPUT}}"
