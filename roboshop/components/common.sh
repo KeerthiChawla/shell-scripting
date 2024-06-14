@@ -23,7 +23,7 @@ LOG=/tmp/roboshop.log
 rm -f $LOG   #Removes the previous log
 
 ADD_APP_USER() {
-  Print "Adding Roboshop User"
+  Print "Adding Roboshop User\t"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
   echo "User already there, So skipping" &>>$LOG
@@ -45,7 +45,7 @@ Status_Check $?
 
 SystemD_Setup() {
   Print "Update SystemD Service"
-sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service
+sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGODB_ENDPOINT/mongodb.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service
 Status_Check $?
 
 Print "SetUp SystemD Service"
@@ -54,7 +54,7 @@ Status_Check $?
 }
 
 NODEJS() {
-  Print "Installing NodeJS"
+  Print "Installing NodeJS\t"
 yum install nodejs make gcc-c++ -y &>>$LOG
 Status_Check $?
 
