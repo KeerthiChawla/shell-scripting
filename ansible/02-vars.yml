@@ -7,7 +7,7 @@
   vars_files: 
     - vars.yml
   tasks: 
-    - name: Print a Variable
+    - name: Print a Variable from Play
       debug: 
         msg: URL = {{URL1}}
     - name: Print a Variable from file
@@ -39,8 +39,8 @@
       #out is user defined variable and variable name is our choice
     - name: Print Uptime output
       debug:
-        msg: "{{out}}"
-        #if we want only uptime output then give "{{out.stdout}}"
+        msg: "{{out.stdout}}"
+        #if we want full uptime output then give "{{out}}"
 #In Ansible if value starts with a variable then it has to be double quoted. +9
     - name: Declare a variable/fact
       set_fact:
