@@ -49,6 +49,3 @@
     - name: Print output
       debug:
         msg: "{{OUTPUT}}"
-
-  roles:
-    - demo
