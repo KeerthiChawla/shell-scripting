@@ -1,9 +1,0 @@
-URL7: vars.google.com
-NUMBER: 7
-NUM1: 7.7
-BOOL1: true
-BOOL2: false
-BOOL3: yes
-BOOL4: no
-STRING: "true" #It is just a string
-NUMBER2: "7"   #It is still a number not string
