@@ -1,4 +1,5 @@
 #!/bin/bash
+#yum install epel-release yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$LOG
 
 source components/common.sh
 
